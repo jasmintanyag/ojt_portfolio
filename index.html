@@ -67,7 +67,7 @@
                 <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Document Set</h3>
                 <div class="flex items-baseline justify-between mb-2">
                     <span id="statusCount" class="text-4xl font-extrabold text-pink-500">0 <span class="text-xl text-gray-400 font-normal">/ 17</span></span>
-                    <span class="text-xs font-semibold bg-pink-100 text-pink-600 px-2.5 py-1 rounded-full">On File</span>
+                    <span class="text-xs font-semibold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full">In Progress</span>
                 </div>
                 <p class="text-xs text-gray-500 mb-6">Track submitted requirements across all deployment phases.</p>
                 
@@ -152,36 +152,36 @@
         // Data Structure
         // Put relative path to your file inside 'file: ""' parameter to mark it "On File"
         const phase1Data = [
-            { id: "DOC 01", name: "Approval Sheet", desc: "Signed approval from the college and OJT coordinator.", file: "docs/doc01.pdf", status: "pending" },
-            { id: "DOC 02", name: "Company Profile", desc: "Profile of YOFC International (Philippines) Corporation.", file: "docs/doc02.pdf", status: "pending" },
-            { id: "DOC 03", name: "Memorandum of Agreement", desc: "MOA between PUP, the student, and the host company.", file: "docs/doc03.pdf", status: "pending" },
-            { id: "DOC 04", name: "Letter of Intent", desc: "Formal letter requesting the internship placement.", file: "docs/doc04.pdf", status: "pending" },
-            { id: "DOC 05", name: "Letter of Endorsement", desc: "Endorsement from the department to the host company.", file: "docs/doc05.pdf", status: "pending" },
-            { id: "DOC 06", name: "Student Waiver", desc: "Signed waiver releasing liability during training.", file: "docs/doc06.pdf", status: "pending" },
-            { id: "DOC 07", name: "Internship Agreement", desc: "Agreement outlining terms of the internship.", file: "docs/doc07.pdf", status: "pending" },
-            { id: "DOC 08", name: "Consent Form", desc: "Parental/guardian consent to undergo OJT.", file: "docs/doc08.pdf", status: "pending" },
-            { id: "DOC 09", name: "CV", desc: "Curriculum vitae submitted to the host company.", file: "docs/doc09.pdf", status: "pending" },
-            { id: "DOC 10", name: "Medical Certificate", desc: "Certificate of fitness to undergo training.", file: "docs/doc10.pdf", status: "pending" },
-            { id: "DOC 11", name: "Insurance", desc: "Proof of student trainee insurance coverage.", file: "docs/doc11.pdf", status: "pending" }
+            { id: "DOC 01", name: "Approval Sheet", desc: "Signed approval from the college and OJT coordinator.", file: "", status: "pending" },
+            { id: "DOC 02", name: "Company Profile", desc: "Profile of YOFC International (Philippines) Corporation.", file: "", status: "pending" },
+            { id: "DOC 03", name: "Memorandum of Agreement", desc: "MOA between PUP, the student, and the host company.", file: "", status: "pending" },
+            { id: "DOC 04", name: "Letter of Intent", desc: "Formal letter requesting the internship placement.", file: "", status: "pending" },
+            { id: "DOC 05", name: "Letter of Endorsement", desc: "Endorsement from the department to the host company.", file: "", status: "pending" },
+            { id: "DOC 06", name: "Student Waiver", desc: "Signed waiver releasing liability during training.", file: "", status: "pending" },
+            { id: "DOC 07", name: "Internship Agreement", desc: "Agreement outlining terms of the internship.", file: "", status: "pending" },
+            { id: "DOC 08", name: "Consent Form", desc: "Parental/guardian consent to undergo OJT.", file: "", status: "pending" },
+            { id: "DOC 09", name: "CV", desc: "Curriculum vitae submitted to the host company.", file: "", status: "pending" },
+            { id: "DOC 10", name: "Medical Certificate", desc: "Certificate of fitness to undergo training.", file: "", status: "pending" },
+            { id: "DOC 11", name: "Insurance", desc: "Proof of student trainee insurance coverage.", file: "", status: "pending" }
         ];
 
         const phase2Data = [
-            { id: "DOC 12", name: "Weekly Reports", desc: "Narrative report of tasks and learnings per week — see log below.", file: "docs/doc12.pdf", status: "pending" },
-            { id: "DOC 13", name: "Photo Documentation", desc: "Daily/weekly photos of on-site work — see log below.", file: "docs/doc13.pdf", status: "pending" }
+            { id: "DOC 12", name: "Weekly Reports", desc: "Narrative report of tasks and learnings per week — see log below.", file: "", status: "pending" },
+            { id: "DOC 13", name: "Photo Documentation", desc: "Daily/weekly photos of on-site work — see log below.", file: "", status: "pending" }
         ];
 
         const phase3Data = [
-            { id: "DOC 14", name: "Certificate of Completion", desc: "Issued by the host company at the end of OJT.", file: "docs/doc14.pdf", status: "pending" },
-            { id: "DOC 15", name: "Evaluation for Student Intern", desc: "Supervisor's evaluation of the intern's performance.", file: "docs/doc15.pdf", status: "pending" },
-            { id: "DOC 16", name: "Evaluation for Supervisor", desc: "Student's evaluation of the assigned supervisor.", file: "docs/doc16.pdf", status: "pending" },
-            { id: "DOC 17", name: "Evaluation Instrument for HTE", desc: "Evaluation of the Host Training Establishment.", file: "docs/doc17.pdf", status: "pending" }
+            { id: "DOC 14", name: "Certificate of Completion", desc: "Issued by the host company at the end of OJT.", file: "", status: "pending" },
+            { id: "DOC 15", name: "Evaluation for Student Intern", desc: "Supervisor's evaluation of the intern's performance.", file: "", status: "pending" },
+            { id: "DOC 16", name: "Evaluation for Supervisor", desc: "Student's evaluation of the assigned supervisor.", file: "", status: "pending" },
+            { id: "DOC 17", name: "Evaluation Instrument for HTE", desc: "Evaluation of the Host Training Establishment.", file: "", status: "pending" }
         ];
 
         const weeklyLogs = [
-            { id: "WK 01", name: "Weekly Report & Photo Documentation", reportFile: "docs/wk01_report.pdf", photoFile: "docs/wk01_photos.pdf" },
-            { id: "WK 02", name: "Weekly Report & Photo Documentation", reportFile: "docs/wk02_report.pdf", photoFile: "docs/wk02_photos.pdf" },
-            { id: "WK 03", name: "Weekly Report & Photo Documentation", reportFile: "docs/wk03_report.pdf", photoFile: "docs/wk03_photos.pdf" },
-            { id: "WK 04", name: "Weekly Report & Photo Documentation", reportFile: "docs/wk04_report.pdf", photoFile: "docs/wk04_photos.pdf" }
+            { id: "WK 01", name: "Weekly Report & Photo Documentation", reportFile: "", photoFile: "" },
+            { id: "WK 02", name: "Weekly Report & Photo Documentation", reportFile: "", photoFile: "" },
+            { id: "WK 03", name: "Weekly Report & Photo Documentation", reportFile: "", photoFile: "" },
+            { id: "WK 04", name: "Weekly Report & Photo Documentation", reportFile: "", photoFile: "" }
         ];
 
         // UI Generation Helper
@@ -191,7 +191,7 @@
                 const isUploaded = item.file && item.file !== "";
                 const statusBadge = isUploaded 
                     ? `<span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1"><i class="fa-solid fa-check-circle"></i> On File</span>`
-                    : `<span class="text-[11px] font-medium text-amber-500 bg-amber-50 px-2 py-0.5 rounded border border-amber-150">Pending submission</span>`;
+                    : `<span class="text-[11px] font-medium text-amber-500 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Pending submission</span>`;
 
                 const actionButton = isUploaded
                     ? `<button onclick="openModal('${item.name}', '${item.file}')" class="text-xs font-semibold text-pink-500 hover:text-pink-600 bg-pink-50 hover:bg-pink-100 px-3 py-1.5 rounded-lg transition-all flex items-center gap-1">View <i class="fa-solid fa-chevron-right text-[10px]"></i></button>`
