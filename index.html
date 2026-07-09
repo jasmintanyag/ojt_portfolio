@@ -67,7 +67,7 @@
                 <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Document Set</h3>
                 <div class="flex items-baseline justify-between mb-2">
                     <span id="statusCount" class="text-4xl font-extrabold text-pink-500">0 <span class="text-xl text-gray-400 font-normal">/ 17</span></span>
-                    <span class="text-xs font-semibold bg-pink-100 text-pink-600 px-2.5 py-1 rounded-full">On File</span>
+                    <span class="text-xs font-semibold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full">In Progress</span>
                 </div>
                 <p class="text-xs text-gray-500 mb-6">Track submitted requirements across all deployment phases.</p>
                 
@@ -191,7 +191,7 @@
                 const isUploaded = item.file && item.file !== "";
                 const statusBadge = isUploaded 
                     ? `<span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1"><i class="fa-solid fa-check-circle"></i> On File</span>`
-                    : `<span class="text-[11px] font-medium text-amber-500 bg-amber-50 px-2 py-0.5 rounded border border-amber-150">Pending submission</span>`;
+                    : `<span class="text-[11px] font-medium text-amber-500 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Pending submission</span>`;
 
                 const actionButton = isUploaded
                     ? `<button onclick="openModal('${item.name}', '${item.file}')" class="text-xs font-semibold text-pink-500 hover:text-pink-600 bg-pink-50 hover:bg-pink-100 px-3 py-1.5 rounded-lg transition-all flex items-center gap-1">View <i class="fa-solid fa-chevron-right text-[10px]"></i></button>`
