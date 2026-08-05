@@ -65,7 +65,9 @@
             <div class="bg-white rounded-2xl p-6 shadow-sm border border-pink-100 sticky top-6">
                 <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Document Set</h3>
                 <div class="flex items-baseline justify-between mb-2">
-                    <span id="statusCount" class="text-4xl font-extrabold text-pink-500">0 <span class="text-xl text-gray-400 font-normal">/ 17</span></span>
+                    <span id="statusCount" class="text-4xl font-extrabold text-pink-500">
+                        0 <span class="text-xl text-gray-400 font-normal">/ 29</span>
+                    </span>
                     <span class="text-xs font-semibold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full">In Progress</span>
                 </div>
                 <p class="text-xs text-gray-500 mb-6">Track submitted requirements across all deployment phases.</p>
@@ -393,9 +395,76 @@
         }
 
         function updateGlobalCounter() {
-            const allItems = [...phase1Data, ...phase2Data, ...phase3Data];
-            const uploadedCount = allItems.filter(item => item.file && item.file !== "").length;
-            document.getElementById('statusCount').innerHTML = `${uploadedCount} <span class="text-xl text-gray-400 font-normal">/ 17</span>`;
+            // Count uploaded Phase 1 and Phase 3 documents
+            const phaseDocuments = [...phase1Data, ...phase3Data];
+
+            const uploadedPhaseDocuments = phaseDocuments.filter(
+                item => item.file && item.file !== ""
+            ).length;
+
+
+            // Count uploaded weekly reports
+            const uploadedWeeklyReports = weeklyLogs.filter(
+                week => week.reportFile && week.reportFile !== ""
+            ).length;
+
+
+            // Count uploaded photo documentations
+            const uploadedPhotoDocumentations = weeklyLogs.filter(
+                week => week.photoFile && week.photoFile !== ""
+            ).length;
+
+
+            // Add all uploaded files
+            const uploadedCount =
+                uploadedPhaseDocuments +
+                uploadedWeeklyReports +
+                uploadedPhotoDocumentations;
+
+
+            // Total files:
+            // 15 regular documents + 7 weekly reports + 7 photo documentations
+            const totalDocuments = 29;
+
+
+            // Update the number automatically
+            document.getElementById("statusCount").innerHTML = `
+                ${uploadedCount}
+                <span class="text-xl text-gray-400 font-normal">
+                    / ${totalDocuments}
+                </span>
+            `;
+
+
+            // Change the status automatically
+            const statusText = document.querySelector(
+                "#statusCount + span"
+            );
+
+
+            if (uploadedCount === totalDocuments) {
+
+                statusText.textContent = "Complete";
+
+                statusText.className =
+                    "text-xs font-semibold bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full";
+
+            } else if (uploadedCount > 0) {
+
+                statusText.textContent = "In Progress";
+
+                statusText.className =
+                    "text-xs font-semibold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full";
+
+            } else {
+
+                statusText.textContent = "Not Started";
+
+                statusText.className =
+                    "text-xs font-semibold bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full";
+
+            }
+
         }
 
         // Modal Functionality
