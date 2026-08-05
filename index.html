@@ -201,24 +201,6 @@
             { id: "DOC 11", name: "Insurance", desc: "Proof of student trainee insurance coverage.", file: "", status: "pending" }
         ];
 
-        const phase2Data = [
-            { 
-                id: "DOC 12", 
-                name: "Weekly Reports", 
-                desc: "Narrative report of tasks and learnings per week — see log below.", 
-                file: "weekly-reports/week-1-report.pdf", 
-                status: "uploaded" 
-            },
-
-            { 
-                id: "DOC 13", 
-                name: "Photo Documentation", 
-                desc: "Daily/weekly photos of on-site work — see log below.", 
-                file: "weekly-reports/week-1-photo-documentation.pdf", 
-                status: "uploaded" 
-            }
-        ];
-
         const phase3Data = [
             { id: "DOC 14", name: "Certificate of Completion", desc: "Issued by the host company at the end of OJT.", file: "", status: "pending" },
             { id: "DOC 15", name: "Evaluation for Student Intern", desc: "Supervisor's evaluation of the intern's performance.", file: "", status: "pending" },
@@ -229,28 +211,43 @@
         const weeklyLogs = [
             {
                 id: "WK 01",
-                name: "Week 1: Weekly Report and Photo Documentation",
+                name: "Week 1",
                 reportFile: "weekly-reports/week-1-report.pdf",
                 photoFile: "weekly-reports/week-1-photo-documentation.pdf"
             },
-
             {
                 id: "WK 02",
-                name: "Week 2: Weekly Report and Photo Documentation",
+                name: "Week 2",
                 reportFile: "weekly-reports/week-2-report.pdf",
                 photoFile: "weekly-reports/week-2-photo-documentation.pdf"
             },
-
             {
                 id: "WK 03",
-                name: "Week 3: Weekly Report and Photo Documentation",
+                name: "Week 3",
                 reportFile: "weekly-reports/week-3-report.pdf",
                 photoFile: "weekly-reports/week-3-photo-documentation.pdf"
             },
-
             {
                 id: "WK 04",
-                name: "Week 4: Weekly Report and Photo Documentation",
+                name: "Week 4",
+                reportFile: "",
+                photoFile: ""
+            },
+            {
+                id: "WK 05",
+                name: "Week 5",
+                reportFile: "",
+                photoFile: ""
+            },
+            {
+                id: "WK 06",
+                name: "Week 6",
+                reportFile: "",
+                photoFile: ""
+            },
+            {
+                id: "WK 07",
+                name: "Week 7",
                 reportFile: "",
                 photoFile: ""
             }
@@ -295,14 +292,14 @@
                 const hasPhotos = log.photoFile && log.photoFile !== "";
 
                 const reportBtn = hasReport 
-                    ? `<button onclick="openModal('${log.id} Report', '${log.reportFile}')" class="text-pink-500 hover:underline flex items-center gap-1"><i class="fa-solid fa-file-text"></i> Report</button>`
-                    : `<span class="text-gray-300 flex items-center gap-1"><i class="fa-solid fa-file-text"></i> Report</span>`;
+                    ? `<button onclick="openModal('${log.name} - Weekly Report', '${log.reportFile}')" class="text-pink-500 hover:underline flex items-center gap-1"><i class="fa-solid fa-file-text"></i> Weekly Report</button>`
+                    : `<span class="text-gray-300 flex items-center gap-1"><i class="fa-solid fa-file-text"></i> Weekly Report</span>`;
 
                 const photoBtn = hasPhotos 
-                    ? `<button onclick="openModal('${log.id} Photos', '${log.photoFile}')" class="text-pink-500 hover:underline flex items-center gap-1"><i class="fa-solid fa-image"></i> Photos</button>`
-                    : `<span class="text-gray-300 flex items-center gap-1"><i class="fa-solid fa-image"></i> Photos</span>`;
+                    ? `<button onclick="openModal('${log.name} - Photo Documentation', '${log.photoFile}')" class="text-pink-500 hover:underline flex items-center gap-1"><i class="fa-solid fa-image"></i> Photo Documentation</button>`
+                    : `<span class="text-gray-300 flex items-center gap-1"><i class="fa-solid fa-image"></i> Photo Documentation</span>`;
 
-                const element = document.createElement('div');
+                    const element = document.createElement('div');
                 element.className = "p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-pink-50/20 transition";
                 element.innerHTML = `
                     <div class="flex items-center gap-3">
@@ -350,7 +347,6 @@
 
         // Initialize Rendering
         renderPhaseCards('p1-container', phase1Data);
-        renderPhaseCards('p2-container', phase2Data);
         renderPhaseCards('p3-container', phase3Data);
         renderWeeklyLogs();
         updateGlobalCounter();
