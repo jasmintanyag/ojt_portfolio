@@ -121,7 +121,7 @@
                 <span id="statusCount" class="text-4xl font-extrabold text-pink-500">
                     0
                     <span class="text-xl text-gray-400 font-normal">
-                        / 30
+                        / 32
                     </span>
                 </span>
 
@@ -581,15 +581,30 @@
             desc: "Proof of student trainee insurance coverage.",
             file: "",
             status: "pending"
-        }
+        },
 
+        {
+            id: "DOC 11",
+            name: "Internship Plan",
+            desc: "Plan outlining the objectives, activities, and expected outcomes of the internship.",
+            file: "",
+            status: "pending"
+        },
+
+        {
+            id: "DOC 12",
+            name: "Daily Time Record",
+            desc: "Record of daily attendance and rendered hours during the internship.",
+            file: "",
+            status: "pending"
+        }
     ];
 
 
     const phase3Data = [
 
         {
-            id: "DOC 11",
+            id: "DOC 13",
             name: "Certificate of Completion",
             desc: "Issued by the host company at the end of OJT.",
             file: "",
@@ -597,7 +612,7 @@
         },
 
         {
-            id: "DOC 12",
+            id: "DOC 14",
             name: "Evaluation for Student Intern",
             desc: "Supervisor's evaluation of the intern's performance.",
             file: "",
@@ -605,7 +620,7 @@
         },
 
         {
-            id: "DOC 13",
+            id: "DOC 15",
             name: "Evaluation for Supervisor",
             desc: "Student's evaluation of the assigned supervisor.",
             file: "",
@@ -613,7 +628,7 @@
         },
 
         {
-            id: "DOC 14",
+            id: "DOC 16",
             name: "Evaluation Instrument for HTE",
             desc: "Evaluation of the Host Training Establishment.",
             file: "",
@@ -673,6 +688,7 @@
             reportFile: "weekly-reports/week-7-report.pdf",
             photoFile: "weekly-reports/week-7-photo-documentation.pdf"
         },
+        
         {
             id: "WK 08",
             name: "Week 8",
@@ -870,7 +886,7 @@
             uploadedWeeklyReports +
             uploadedPhotoDocumentations;
 
-        const totalDocuments = 30;
+        const totalDocuments = 32;
 
         document.getElementById("statusCount").innerHTML = `
             ${uploadedCount}
