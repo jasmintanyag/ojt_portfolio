@@ -121,7 +121,7 @@
                 <span id="statusCount" class="text-4xl font-extrabold text-pink-500">
                     0
                     <span class="text-xl text-gray-400 font-normal">
-                        / 32
+                        / 33
                     </span>
                 </span>
 
@@ -633,8 +633,15 @@
             desc: "Evaluation of the Host Training Establishment.",
             file: "documents/evaluation-hte.pdf",
             status: "uploaded"
-        }
+        },
 
+        {
+            id: "DOC 17",
+            name: "OJT Adviser Performance Evaluation",
+            desc: "Evaluation of the OJT Adviser's performance.",
+            file: "documents/ojt-adviser-evaluation.pdf",
+            status: "uploaded"
+        }
     ];
 
 
@@ -886,7 +893,7 @@
             uploadedWeeklyReports +
             uploadedPhotoDocumentations;
 
-        const totalDocuments = 32;
+        const totalDocuments = 33;
 
         document.getElementById("statusCount").innerHTML = `
             ${uploadedCount}
